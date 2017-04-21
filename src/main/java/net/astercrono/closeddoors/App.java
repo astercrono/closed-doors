@@ -1,6 +1,7 @@
 package net.astercrono.closeddoors;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,8 +22,8 @@ public class App {
 
 	public static void main(final String[] args) {
 		final int numberOfDoors= 100;
-		final int width = 500;
-		final int height = 500;
+		final int width = 700;
+		final int height = 700;
 
 		final DoorSolver solver = new DoorSolver(numberOfDoors);
 		final SolveHistory history = solver.solve();
@@ -44,7 +45,7 @@ public class App {
 
 		final JFrame window = new JFrame();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.setSize(width, height);
+		window.setSize(new Dimension(width, height + 20));
 		window.add(grid);
 		window.setVisible(true);
 		
