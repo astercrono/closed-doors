@@ -30,4 +30,9 @@ public class SolveHistory {
 	public void setHallways(List<Hallway> hallways) {
 		this.hallways = hallways;
 	}
+	
+	public int getSolution() {
+		final Hallway hallway = hallways.get(hallways.size() - 1);
+		return hallway.getNumberOfOpenDoors();
+	}
 }

@@ -30,6 +30,8 @@ public class App {
 
 		final App app = new App(history);
 		app.render(width, height);
+		
+		System.out.println("Solution: " + history.getSolution());
 	}
 
 	private void render(final int width, final int height) {
