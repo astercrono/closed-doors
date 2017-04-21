@@ -27,7 +27,7 @@ public class Hallway {
 	public void closeDoor(final int doorNumber) {
 		doors.get(doorNumber - 1).close();
 	}
-	
+
 	public void toggleDoor(final int doorNumber) {
 		doors.get(doorNumber - 1).toggle();
 	}
@@ -35,7 +35,7 @@ public class Hallway {
 	public int getNumber() {
 		return number;
 	}
-	
+
 	public void setNumber(final int number) {
 		this.number = number;
 	}
@@ -46,6 +46,30 @@ public class Hallway {
 
 	public List<Door> getDoors() {
 		return doors;
+	}
+
+	public int getNumberOfOpenDoors() {
+		int number = 0;
+
+		for (final Door d : doors) {
+			if (d.isOpen()) {
+				number++;
+			}
+		}
+
+		return number;
+	}
+
+	public int getNumberOfClosedDoors() {
+		int number = 0;
+
+		for (final Door d : doors) {
+			if (d.isClosed()) {
+				number++;
+			}
+		}
+
+		return number;
 	}
 
 	private void createDoors(final int numberOfDoors) {
@@ -61,12 +85,12 @@ public class Hallway {
 
 	protected Hallway copy() {
 		final Hallway hallway = new Hallway(getNumber(), doors.size());
-		
+
 		getDoors().forEach((Door door) -> {
 			final Door copyDoor = hallway.getDoor(door.getNumber());
 			copyDoor.setState(door.getState());
 		});
-		
+
 		return hallway;
 	}
 }
