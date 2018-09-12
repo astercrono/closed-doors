@@ -11,3 +11,5 @@ Let's call this action toggling a locker.
 Continue toggling every nth locker on pass number n. 
 
 After 100 passes, where you toggle only locker #100, how many lockers are open?
+
+![Screenshot](screenshot.png)
